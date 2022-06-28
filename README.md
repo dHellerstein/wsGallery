@@ -32,7 +32,7 @@ An image viewer: with zoom, several scrolling methods, thumbnails, and more
 - Unzip the wsGalleryxx.zip file to a dedicated directory. 
  
    Typically a subdirectory with  name like wsGallery_v13 is created.
-   It is best to rename this to something more generic (such as wGallery)l
+   It is best to rename this to something more generic (such as wGallery). 
    Several subdirectories will be created under this directory.  
 
 -  Several parameters files (in these subdirectorie) must be modified using your favorite text editor.
