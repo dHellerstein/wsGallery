@@ -23,15 +23,22 @@ An image viewer: with zoom, several scrolling methods, thumbnails, and more
  - On line help is available by clicking on the ? icons. 
   Use the "lantern" icon (at the top of each help topic window) to see an index of help topics (including 
   admin only ones).
+  
+ - wsGallery works best on desktops. However, a "compact" version (wsGallery_small.php) provides a reasonable
+   interface for mobile devices.
 
 **Installation and setup**
 
 - Unzip the wsGalleryxx.zip file to a dedicated directory. 
-Several subdirectories will be created under this directory.
+ 
+   Typically a subdirectory with  name like wsGallery_v13 is created.
+   It is best to rename this to something more generic (such as wGallery)l
+   Several subdirectories will be created under this directory.  
 
--  Several parameters files must be modified using your favorite text editor.
+-  Several parameters files (in these subdirectorie) must be modified using your favorite text editor.
 
--  When ready. point your browser at `wsGallery.php`
+-  When ready, point your browser at `wsGallery.php`
+   On first load, wsGallery will list the status of the installation, noting what files need to be modified (and where these files are).
 
 See wsGallery_readme.txt for detailed installation and setup instructions.
 
