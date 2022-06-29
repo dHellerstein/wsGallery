@@ -1,0 +1,153 @@
+28 June 2022 
+
+wsGallery changelog.
+This does not cover changes prior to version 20220608.v1_3.
+
+June 28 2022  20220628.v1_3.
+
+ * Added "swipe" ability to wsGallery_small.php. Swiping (on mobile devices) can be used to view prior or next files.
+   This can be disabled in settings
+
+ * A floating box at the top off "full screen" view in wsGallery_small.php -- contains a "x" (to leave full screen),
+   a Swipe box (to enable disable swipe for this file), and the file name
+
+ * Cleaned up some small bugs (not showing most recent file name when re-entering filelist)
+
+ * Large font used in tree display (since there are not likely to be lots of trees)
+
+ * Fixed capitalization of file names bugs
+
+ * Added a "show link to compact viewer" cookie option.
+
+ * Added doCompact parameter to wsGallery_params.php, and a showCompactLink to cookies.
+   showCompactLink overrides doCompact. Controls if the compactViewer button is shown, and if it is auto click if
+   a mobile device is being used.
+
+
+
+June 25 2022  20220627.v1_3.
+  * Add a "small viewer" -- suitable for pads and smart phones. wsGallery_small.php (and wsGallery_small.js) 
+
+  * Small changes to wsGallery_get.js (to retrive just an array or object  -- without trying to write to html)
+
+  * Add a "would you like to use compact viewer" if small screen size detected.
+
+June 25 2022  20220625.v1_3.
+   * Modified wsgallery_simple and wsGallery_get.js.  Add a "redisplay image maintaining aspect ratio" button.
+     Clicking it will redisplay the image with width and height attributes that maintain the image's original aspect ratio
+     (ratio of width to height)
+
+June 21 2022  20220620.v1_3.
+
+   * Added a "view compressed list of directories" -- a list of buttons (of dir names), click one to scroll to that
+     directory in the list of directories
+
+   * If installing v1_3 over an older version, you will probably have to delete the treeList.json, and dirList.json files.
+     It is fairly quick to recreate these (you do NOT have to recreate the thumbnails, etc).
+
+   * Create _keywords.json whenever admin adds a keyword. This complements _keywords.json create when admin
+     views keywords (that may have been added to by a user in the recent past)
+
+   * Added a "please wait" message when user views keywords (for all files in a directory)
+   
+   * Added a check window and screen width and height -- alert a warning if too small (the minSizeViewing parameter
+     in wsGallery.php). By default, 400 is used (pixels).
+
+   * Fixed small bugs in singleImage viewer (was not shrinking image).
+
+   * Fixed small tree switch bugs 
+
+June 20 2022  20220620.v1_3.
+
+  * Augmented keyword support. Admin can view and  keywords for all files in a directory (on one screen).
+
+  * User can view keywords for all files in a directory (using the "list" fileList display mode)
+  
+  * "listDisplay" is used in the button to switch between button, list, and table display (of files in a directory)
+  
+  * Users can set a few default parameters (gallery, tree, dir, screenLayout, thumbnails, listDisplay" -- using cookies.
+    This is done using the 'gear' settings button (upper right corner)
+
+  * Admin logon button now requires clickin the 'gear' button first
+  
+  * "large single image viewer" is no longer one of the screen layouts.  
+     However: you can switch to it under the singleViewer  screen layout. 
+     That is: the 2/3 image, 1/3 file list is now the sole single image viewer, but a resize to "large
+     single image viewer" button is available under single image viewer
+
+   * Tableau mode by default starts with file listin upper 1/4 of screen.
+     You can use 2 buttons (on top line) to switch between the default (file list in upper 1/4), and a
+     most of screen used for tableau (file list is hidden behind the tableau viewer)
+
+   * pgUp and pgDn can be use to  view prior and next images.
+   
+   * useThumbnails parameter now in wsGallery_params.php
+
+June 11 2022  20220612.v1_3.
+
+  * Added maxNoteSize parameter -- limits total size of a notes file (to prevent hackers for filling up hard drive)
+  
+  * _flag.txt updated in galleries/gallery/tree/dir whenever a note/keyword is added (to a file in this cache dir)
+  
+  * Save _keywords.json whenever keywords-for-all-files-in-a-dir are looked up. 
+    If this file is newer than _flag.txt -- use it when displaying all keyword for all files in a directory (hence,
+    do not re-create each time).
+
+  * Create _keywords.json whenever admin requests "view all keywords for all files" (in the change descriptions for files menu)
+ 
+  *  User can display a table of all keywords in all files (in a directory) -- IF _keywords.json was created by admin.
+     Note that _keywords.json may be out of data (if keywords were recently added).
+     A button to display the file is the first column of the table.
+     This uses the  "singleImage" viewer.
+     
+  * In the "display a list of all keywords in all files ..." -- user can specify one (or several) keywords so search for.
+    Matches will have their "button to display ..." highlighted.
+    
+
+June 11 2022  20220611.v1_3.
+
+  * File keywords can be be displayed for each file in a directory (in an admin mode)
+
+  * The icon for "view files in a directory" (admin mode) was changed (as was the title)
+
+  * Added a "view in tableau mode" icon to singleImage viewer. A bit buggy -- will add current image to tableau
+
+  * Favorites now include a "created by" field. Public favorites-list can be displayed in a table, each row containing the
+    favorite-lists created by the same person (by the same value of the "created by" field).
+
+  * Minor changes to favorites view and specification (a few more quick jump buttons).
+
+June 8 2022 20220608.v1_3.
+
+ * Support for "alternative tree names. An `altname` can be displayed in the "select a tree" buttons --
+   it can be several words long.  Specified in wsGallery_treeList.php
+
+ * Support for customized size and location for the dual-viewer, preset 3, screen layout.
+   By default, this layout has large viewer (viewer 2) in the lower 3/4 of the screen, and
+   the small (preview viewer, viewer 1), and file list, in the upper 1/4.
+   The locations & size of all 3 of these can be set in wsGallery_params.php
+   
+ * toggleViewInfo bug (not showing information in viewers when switching to dual viewer) -- needs to be resolved.
+ 
+Changes before v1_3 
+
+ * Support for "collections" -- a selectable set of directories that are treated like a tree.
+   Each of thes directories can come from any gallery or tree.
+   The original directories are not touched -- a collection is an alternative way of allowing the
+   user to select from a "collection" of directories. 
+   For example, all directories from the same month, but from "trees" specific to different individuals.
+   The administrator can create as many collections as desired.
+
+ * Support for favorites -- a selectable list of files that are treated like a directory.
+   Each of these files can come from any gallery / tree / directory.
+   As with collections, the original files are not touched.
+   For example: all photos of your grandmother (that may be located in a number of different trees).
+   Users can create and save as many favorite-list as they want -- storage can be on their own computer,
+   or (if the administrator sets a parameter in wsGallery_params.php), on the server.
+
+ * Support for file-notes. Users can add notes (and keyword) to individual files. These notes can be viewed
+   at a later date by any visitor to the site (not only the person who created a note). Notes are cumulative --
+   additional notes are added without overwriting prior notes.
+   
+  * Reorganized the "dual viewer" presets -- their location and size better complement screen layouts such as singleImage.
+  
