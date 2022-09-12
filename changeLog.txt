@@ -1,7 +1,12 @@
-07 July 2022 
+12 September 2022 
 
 wsGallery changelog.
 This does not cover changes prior to version 20220608.v1_3.
+
+September 12 2022  20220912.v1_3
+
+  * Added a "fit to viewer" and "redisplay original image" to  viewer2.
+  * Slight changes to help file
 
 July 7 2022  20220007.v1_3.
 
