@@ -1,4 +1,38 @@
-12 September 2022 
+
+ ---- Ver 1_45 changes (16 July 2025)
+
+See below for propr changes.
+
+Ver 1_45 does not add much funcdtionality. It did introduce a number of "decluttering" changes to the user interface , fixed some small bugs,
+and added to the documentation.
+
+Noticeable changes include:
+
+  * The top bar has a "chose gallery/tree/dir" button, and a choose viewing mode button. Both of these will display larger menus.
+  * The top bar also has a "change wsGallery version" button (standard, simple, compact). 
+  * There are 4 viewing modes:  singleImage (the "standard"), dual image, rotating image, and tableau.
+    These can be chosen from the top bar, and (selectively) from within each viewing mode. 
+    There are fewer "switch viewing mode" buttons within each viewing mode (part of the decluttering).
+  * The "single image" viewer (which is considered to be the standard) has fewer choices (decluttering!)    
+    You can switch to singleImage viewer for any image being displayed in the dual image, rotating, or tableau  viewers -- using
+    image specific buttons displayed near the image. 
+  * The dual image viewer also has fewer choices. 
+    Switching the dual image variant (3 different pre set sizes) is with just one button (at the top of the file-list pane).
+  * However, for both dual and single a new option is added: create and display links to individual images (suitable inclusion in emails, other
+    web pages, etc)
+  * Small bugs adding image specific notes, and keywords, have been fixed.
+  * For administators: a "check for changes" button added for each tree. When checked, all directories in a tree are searched. If
+    there are differences between files (files removed, files added, files changes) highlighting is done to indicate that changes occured.
+    You can also view a list of changes.
+    This allows the admin to find just what directories have changed, and update their "cached information". Rather that the possibly slow
+    process of updating every directory in a tree.
+
+Note: "single image" uses 2 "panes": the "file list", and "viewer".
+      "dual image" uses 3 "panes": the "file list", "preview", and "full view". larger pane). The relative sizes of these panes can be quickly
+      changed usinfg the "switch dual image variant" button (at the top of the file view pane)
+
+
+ --------- Ver 1_3 changes (12 September 2022)
 
 wsGallery changelog.
 This does not cover changes prior to version 20220608.v1_3.
